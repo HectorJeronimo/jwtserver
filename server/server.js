@@ -20,13 +20,13 @@ app.use(require('./routes/index'));
 
 
 
-/*mongoose.connect(process.env.URLDB, (err, res) => {
+mongoose.connect(process.env.URLDB, (err, res) => {
 
     if (err) throw err;
 
     console.log('Base de datos ONLINE');
 
-});*/
+});
 
 
 

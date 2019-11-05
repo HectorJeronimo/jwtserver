@@ -9,10 +9,10 @@ const { verificaToken, verificaAdmin_Role } = require('../middlewares/autenticac
 const app = express();
 
 
-app.get('/usuario', verificaToken, (req, res) => {
+app.get('/usuario', /*verificaToken,*/ (req, res) => {
 
 
-    /*let desde = req.query.desde || 0;
+    let desde = req.query.desde || 0;
     desde = Number(desde);
 
     let limite = req.query.limite || 5;
@@ -41,18 +41,19 @@ app.get('/usuario', verificaToken, (req, res) => {
             });
 
 
-        });*/
+        });
 
-        res.json({
+        /*res.json({
             ok: true,
             usuario: "Hector Jeronimo"
-        });
+        });*/
 
 });
 
-app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
+app.post('/usuario', /*[verificaToken, verificaAdmin_Role],*/ function(req, res) {
 
-    /*let body = req.body;
+    let body = req.body;
+    console.log("ESTE ES EL BODY",body);
 
     let usuario = new Usuario({
         nombre: body.nombre,
@@ -77,11 +78,11 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
         });
 
 
-    });*/
-    res.json({
+    });
+    /*res.json({
         ok: true,
         message: "Pudiste Insertar al usuario" 
-    });
+    });*/
 
 
 });
